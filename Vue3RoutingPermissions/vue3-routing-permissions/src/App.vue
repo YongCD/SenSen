@@ -5,12 +5,10 @@
 </template>
 
 <script setup lang="ts">
-  import { getUserRouteList } from '@/api'
-  async function getList () {
-    const res = await getUserRouteList(3)
-    console.log(res)
-  }
-  getList()
+  import { useStore } from 'vuex'
+  import { SET_AUTH, SET_ROUTE_TREE } from '@/store/mutationTypes'
+  const store = useStore()
+  store.dispatch('setRouteTree')
 </script>
 
 <style scoped>

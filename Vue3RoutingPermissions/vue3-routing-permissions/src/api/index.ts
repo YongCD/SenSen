@@ -1,7 +1,7 @@
 import { http } from '@/libs'
 
-function getUserRouteList (id: number) {
+function getUserRouteListApi (id: number) {
   return http.post('/api/user_router_list', { id })
 }
 
-export { getUserRouteList }
+export { getUserRouteListApi }
