@@ -1,5 +1,4 @@
 // import type { IRoute } from "@/types"
-
 // /**
 //  * 格式化路由树
 //  * @param routeList 路由列表
@@ -50,8 +49,9 @@
 //   }
 // }
 
-// import type { IRoute } from "@/types";
 
+
+// import type { IRoute } from "@/types";
 // /**
 //  * 格式化路由树
 //  * @param routeList 路由列表
@@ -117,7 +117,6 @@
 
 
 import type { IRoute } from "@/types";
-
 /**
  * 格式化路由树
  * @param routeList 路由列表
