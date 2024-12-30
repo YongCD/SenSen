@@ -19,17 +19,16 @@ function generateRouter (routeTree: IRoute[]): RouteRecordRaw[]  {
     }
     return route
   })
-  console.log(newRoutes)
   return newRoutes
 }
 
 export default function routerBeforeEach (router: Router, store: Store<IState>) {
-  router.beforeEach(async (_to, _from, next) => {
+  router.beforeEach(async (to, _from, next) => {
     if (!store.state.hasAuth) {
       await store.dispatch('setRouteTree')
       const newRoutes = generateRouter(store.state.routeTree)
       newRoutes.forEach(route => router.addRoute(route))
-      next()
+      next({ path: to.path })
     } else {
       next()
     }
